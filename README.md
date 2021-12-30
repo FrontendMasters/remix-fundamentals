@@ -46,14 +46,42 @@ variable and how to fix it here for [windows][win-path] or
 
 ## Setup
 
+Follow these steps to get this set up:
+
+```sh
+git clone https://github.com/kentcdodds/remix-fundamentals.git
+cd remix-fundamentals
+npm run setup
+```
+
+If you experience errors here, please open [an issue][issue] with as many
+details as you can offer.
+
 ### Exercises
 
 You'll find all the exercises in the `exercises` directory. The finished version
-of each exercise is in the `final` directory.
+of each exercise is in the `final` directory. Each directory is a completely
+contained Remix app.
 
 The purpose of the exercise is **not** for you to work through all the material.
 It's intended to get your brain thinking about the right questions to ask me as
 _I_ walk through the material.
+
+### Running each app
+
+Each directory in the `final` and `exercises` directories is a Remix app. The
+easiest way to run these without having to `cd` into each directory is to use
+the `dev.js` script in the root of this repository:
+
+```sh
+# to run the first exercise app:
+node dev exercise/01
+
+# or to run the final version of the 2nd exercise
+node dev final/02
+```
+
+Each will run on a unique port so you can run multiple apps at once.
 
 ### Helpful Emoji 🐨 💰 💯 📝 🦉 📜 💣 💪 🏁 👨‍💼 🚨
 

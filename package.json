@@ -8,7 +8,8 @@
     "build": "node ./scripts/build",
     "dev": "node dev",
     "diff": "node diff",
-    "install": "node ./scripts/install"
+    "postinstall": "node ./scripts/install",
+    "setup": "npm install && npm run typecheck && npm run build"
   },
   "repository": {
     "type": "git",

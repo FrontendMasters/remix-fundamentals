@@ -22,7 +22,7 @@ jobs:
           node-version: 16
 
       - name: 📥 Download deps
-        run: npm run install
+        run: npm install
 
       - name: ʦ TypeScript
         run: npm run typecheck
