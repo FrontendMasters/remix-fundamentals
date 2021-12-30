@@ -1,0 +1,10 @@
+{
+  "files": [],
+  "exclude": ["node_modules"],
+  "references": [
+    { "path": "exercise/01" },
+    { "path": "exercise/02" },
+    { "path": "final/01" },
+    { "path": "final/02" }
+  ]
+}
