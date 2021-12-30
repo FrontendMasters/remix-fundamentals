@@ -14,7 +14,6 @@
 
 <!-- prettier-ignore-start -->
 [![Build Status][build-badge]][build]
-[![All Contributors][all-contributors-badge]](#contributors-)
 [![GPL 3.0 License][license-badge]][license]
 [![Code of Conduct][coc-badge]][coc]
 <!-- prettier-ignore-end -->
@@ -97,8 +96,7 @@ Thank you! https://kcd.im/rmx-fundamentals-ws-feedback
 [license-badge]: https://img.shields.io/badge/license-GPL%203.0%20License-blue.svg?style=flat-square
 [license]: https://github.com/kentcdodds/remix-fundamentals/blob/main/LICENSE
 [coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
-[coc]: https://github.com/kentcdodds/remix-fundamentals/blob/main/CODE_OF_CONDUCT.md
-[emojis]: https://github.com/kentcdodds/all-contributors#emoji-key
+[coc]: https://kentcdodds.com/conduct
 [win-path]: https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/
 [mac-path]: http://stackoverflow.com/a/24322978/971592
 [issue]: https://github.com/kentcdodds/remix-fundamentals/issues/new
