@@ -6,3 +6,8 @@
 4. Mutations
 5. Authentication
 6. Error Handling
+7. Meta tags and SEO
+8. Resource Routes
+9. JavaScript
+10. Optimistic UI
+11. Deployment

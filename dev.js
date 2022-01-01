@@ -11,7 +11,8 @@ async function go() {
     return;
   }
 
-  const [category, number] = appDir.split("/");
+  const [category, numberName] = appDir.split("/");
+  const [number] = numberName.split("-");
   const PORT =
     {
       exercise: 4000,
