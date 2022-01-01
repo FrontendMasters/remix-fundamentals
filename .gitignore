@@ -3,5 +3,5 @@ node_modules
 .cache
 build
 public/build
-prisma/dev.db
+dev.db
 .env
