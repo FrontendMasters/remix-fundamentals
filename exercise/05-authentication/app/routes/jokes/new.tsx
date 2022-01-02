@@ -47,6 +47,7 @@ export const action: ActionFunction = async ({ request }) => {
     return badRequest({ fieldErrors, fields });
   }
 
+  // @ts-expect-error it's your job to fix this :)
   const joke = await db.joke.create({ data: fields });
   return redirect(`/jokes/${joke.id}`);
 };
