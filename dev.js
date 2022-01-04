@@ -1,9 +1,16 @@
 const fs = require("fs/promises");
-const { 2: appDir } = process.argv;
-
 const cp = require("child_process");
+const { getExerciseDirs, getFinalDirs } = require("./scripts/utils");
+
+let { 2: appDir } = process.argv;
+
+const resolvePath = (p) =>
+  [...getExerciseDirs(), ...getFinalDirs()].find((dir) =>
+    path.resolve(dir).startsWith(path.resolve(p))
+  );
 
 async function go() {
+  appDir = resolvePath(appDir);
   // warn if the directory deosn't exist
   const stat = await fs.stat(appDir).catch(() => false);
   if (!stat) {

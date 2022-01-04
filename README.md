@@ -83,29 +83,42 @@ node dev final/02
 
 Each will run on a unique port so you can run multiple apps at once.
 
-### Helpful Emoji 🐨 💰 💯 📝 🦉 📜 💣 💪 🏁 👨‍💼 🚨
+I suggest that as you go through the workshop, rather than opening this whole
+repo in an editor window, you open each exercise folder in an individual editor
+window (this will make things like ⌘+P more useful).
 
-Each exercise has comments in it to help you get through the exercise. These fun
-emoji characters are here to help you.
+### Instructions
 
-- **Kody the Koala** 🐨 will tell you when there's something specific you should
-  do
-- **Marty the Money Bag** 💰 will give you specific tips (and sometimes code)
-  along the way
-- **Hannah the Hundred** 💯 will give you extra challenges you can do if you
-  finish the exercises early.
-- **Nancy the Notepad** 📝 will encourage you to take notes on what you're
-  learning
-- **Olivia the Owl** 🦉 will give you useful tidbits/best practice notes and a
-  link for elaboration and feedback.
-- **Dominic the Document** 📜 will give you links to useful documentation
-- **Berry the Bomb** 💣 will be hanging around anywhere you need to blow stuff
-  up (delete code)
-- **Matthew the Muscle** 💪 will indicate that you're working with an exercise
-- **Chuck the Checkered Flag** 🏁 will indicate that you're working with a final
-- **Peter the Product Manager** 👨‍💼 helps us know what our users want
-- **Alfred the Alert** 🚨 will occasionally show up in the test failures with
-  potential explanations for why the tests are failing.
+This workshop follows along with
+[the official Jokes App Tutorial](https://remix.run/docs/en/v1/tutorials/jokes).
+It's completely self-paced. The benefit of using this repository is you can skip
+around to different parts of the tutorial or even skip over different parts
+completely.
+
+When you're ready to start a section of the tutorial, open that section's
+exercise directory in your editor and follow along with what the tutorial says
+to do. To challenge yourself a little extra, you can ignore the code snippets in
+the tutorial.
+
+You can us the `diff.js` script to be shown the differences between what's in
+any of the apps. For example:
+
+```sh
+# to be shown the differences between the first exercise and the final version:
+node diff exercise/01 final/01
+```
+
+This can be handy for you to run when you think you're done but things aren't
+quite working as you expect.
+
+Sometimes there are changes that happen outside of the tutorial because they're
+unrelated to Remix but they can be handy to know about (like when we're getting
+the database ready for auth), so the diff command can help with that:
+
+```sh
+# To be shown the changes that happened to prepare for the exercise:
+node diff final/04 exercise/05
+```
 
 ## Workshop Feedback
 
