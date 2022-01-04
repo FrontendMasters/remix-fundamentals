@@ -57,7 +57,7 @@ function Document({
         {children}
         <Scripts />
         {process.env.NODE_ENV === "development" ? (
-          <LiveReload port={7909} />
+          <LiveReload port={Number(process.env.DEV_SERVER_PORT ?? 8002)} />
         ) : null}
       </body>
     </html>
