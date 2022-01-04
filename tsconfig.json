@@ -10,6 +10,7 @@
     { "path": "exercise/06-error-handling" },
     { "path": "exercise/07-meta-seo" },
     { "path": "exercise/08-resource-routes" },
+    { "path": "exercise/09-javascript" },
     { "path": "final/01-routing" },
     { "path": "final/02-stying" },
     { "path": "final/03-fetch-data" },
@@ -17,6 +18,7 @@
     { "path": "final/05-authentication" },
     { "path": "final/06-error-handling" },
     { "path": "final/07-meta-seo" },
-    { "path": "final/08-resource-routes" }
+    { "path": "final/08-resource-routes" },
+    { "path": "final/09-javascript" }
   ]
 }
