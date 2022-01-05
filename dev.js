@@ -1,5 +1,6 @@
 const fs = require("fs/promises");
 const cp = require("child_process");
+const path = require("path");
 const { getExerciseDirs, getFinalDirs } = require("./scripts/utils");
 
 let { 2: appDir } = process.argv;
@@ -18,7 +19,7 @@ async function go() {
     return;
   }
 
-  const [category, numberName] = appDir.split("/");
+  const [_dot, category, numberName] = appDir.split("/");
   const [number] = numberName.split("-");
   const PORT =
     {

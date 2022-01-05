@@ -10,7 +10,7 @@ export default function App() {
       <body>
         <Outlet />
         {process.env.NODE_ENV === "development" ? (
-          <LiveReload port={Number(process.env.DEV_SERVER_PORT ?? 8002)} />
+          <LiveReload port={require("../remix.config").devServerPort} />
         ) : null}
       </body>
     </html>
