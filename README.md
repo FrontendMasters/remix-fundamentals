@@ -1,5 +1,5 @@
 <div>
-  <h1 align="center"><a href="https://kentcdodds.com/workshops/build-better-apps-with-remix">💿 Remix Fundamentals</a></h1>
+  <h1 align="center"><a href="https://kentcdodds.com/workshops/build-better-apps-with-remix">💿 Remix Workshop</a></h1>
   <strong>
     Build Better websites with Remix
   </strong>
