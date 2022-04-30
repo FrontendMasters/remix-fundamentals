@@ -27,6 +27,6 @@
   },
   "homepage": "https://github.com/kentcdodds/remix-fundamentals#readme",
   "devDependencies": {
-    "typescript": "^4.5.4"
+    "typescript": "^4.6.4"
   }
 }

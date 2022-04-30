@@ -27,17 +27,11 @@ async function go() {
       final: 5000,
     }[category] + Number(number);
 
-  // won't have to set the DEV_SERVER_PORT when
-  // https://github.com/remix-run/remix/issues/1277 is done
-  const {
-    devServerPort: DEV_SERVER_PORT,
-  } = require(`./${appDir}/remix.config.js`);
-
   cp.spawn(`npm run dev`, {
     cwd: appDir,
     shell: true,
     stdio: "inherit",
-    env: { PORT, DEV_SERVER_PORT, ...process.env },
+    env: { PORT, ...process.env },
   });
 }
 
