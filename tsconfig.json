@@ -12,6 +12,9 @@
     { "path": "final/03-dynamic-params" },
 
     { "path": "exercise/04-nested-routing" },
-    { "path": "final/04-nested-routing" }
+    { "path": "final/04-nested-routing" },
+
+    { "path": "exercise/05-mutations" },
+    { "path": "final/05-mutations" }
   ]
 }
