@@ -4,7 +4,9 @@
   "references": [
     { "path": "exercise/01-routing" },
     { "path": "exercise/02-data-loading" },
+    { "path": "exercise/03-dynamic-params" },
     { "path": "final/01-routing" },
-    { "path": "final/02-data-loading" }
+    { "path": "final/02-data-loading" },
+    { "path": "final/03-dynamic-params" }
   ]
 }
