@@ -1,24 +1,5 @@
 {
   "files": [],
   "exclude": ["node_modules"],
-  "references": [
-    { "path": "exercise/01-routing" },
-    { "path": "exercise/02-styling" },
-    { "path": "exercise/03-fetch-data" },
-    { "path": "exercise/04-mutations" },
-    { "path": "exercise/05-authentication" },
-    { "path": "exercise/06-error-handling" },
-    { "path": "exercise/07-meta-seo" },
-    { "path": "exercise/08-resource-routes" },
-    { "path": "exercise/09-javascript" },
-    { "path": "final/01-routing" },
-    { "path": "final/02-stying" },
-    { "path": "final/03-fetch-data" },
-    { "path": "final/04-mutations" },
-    { "path": "final/05-authentication" },
-    { "path": "final/06-error-handling" },
-    { "path": "final/07-meta-seo" },
-    { "path": "final/08-resource-routes" },
-    { "path": "final/09-javascript" }
-  ]
+  "references": [{ "path": "exercise/01-routing" }]
 }
