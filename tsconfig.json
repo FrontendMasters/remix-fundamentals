@@ -1,5 +1,10 @@
 {
   "files": [],
   "exclude": ["node_modules"],
-  "references": [{ "path": "exercise/01-routing" }]
+  "references": [
+    { "path": "exercise/01-routing" },
+    { "path": "exercise/02-data-loading" },
+    { "path": "final/01-routing" },
+    { "path": "final/02-data-loading" }
+  ]
 }
