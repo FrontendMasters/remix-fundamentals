@@ -4,8 +4,8 @@
     Build Better websites with Remix
   </strong>
   <p>
-    Remix enables you to build fantastic user experiences for the web and not be
-    ashamed of the code that got you there. Get a jumpstart on Remix with this
+    Remix enables you to build fantastic user experiences for the web and feel
+    happy with the code that got you there. Get a jumpstart on Remix with this
     workshop.
   </p>
 </div>
@@ -90,8 +90,8 @@ window (this will make things like ⌘+P more useful).
 ### Instructions
 
 This workshop follows along with
-[the official Jokes App Tutorial](https://remix.run/docs/en/v1/tutorials/jokes).
-It's completely self-paced. The benefit of using this repository is you can skip
+[the official Blog Tutorial](https://remix.run/docs/en/v1/tutorials/blog). It's
+completely self-paced. The benefit of using this repository is you can skip
 around to different parts of the tutorial or even skip over different parts
 completely.
 
