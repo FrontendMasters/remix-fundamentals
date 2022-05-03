@@ -15,6 +15,9 @@
     { "path": "final/04-nested-routing" },
 
     { "path": "exercise/05-mutations" },
-    { "path": "final/05-mutations" }
+    { "path": "final/05-mutations" },
+
+    { "path": "exercise/06-progressive-enhancement" },
+    { "path": "final/06-progressive-enhancement" }
   ]
 }
