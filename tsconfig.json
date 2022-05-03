@@ -18,6 +18,9 @@
     { "path": "final/05-mutations" },
 
     { "path": "exercise/06-progressive-enhancement" },
-    { "path": "final/06-progressive-enhancement" }
+    { "path": "final/06-progressive-enhancement" },
+
+    { "path": "exercise/07-homework" },
+    { "path": "final/07-homework" }
   ]
 }

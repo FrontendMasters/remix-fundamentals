@@ -2,7 +2,8 @@ node_modules
 
 /build
 /public/build
-.env
+# Normally you ignore this file, but to make the workshop easier we'll keep it around
+# .env
 
 /cypress/screenshots
 /cypress/videos

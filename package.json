@@ -7,10 +7,9 @@
     "typecheck": "tsc -b .",
     "build": "node ./scripts/build",
     "dev": "node dev",
-    "setup-db": "node ./scripts/setup-db",
     "diff": "node diff",
     "postinstall": "node ./scripts/install",
-    "setup": "npm install && npm run setup-db && npm run typecheck && npm run build"
+    "setup": "npm install && node ./scripts/setup && npm run typecheck && npm run build"
   },
   "repository": {
     "type": "git",

@@ -11,5 +11,6 @@
 - Homework includes:
   - Update/Delete
   - Optimistic UI
+  - Error Handling
   - Authentication
   - Deployment
