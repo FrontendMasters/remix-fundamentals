@@ -9,6 +9,7 @@
 7. Homework (choose your own adventure)
 
 - Homework includes:
+  - Data Optimization
   - Update/Delete
   - Optimistic UI
   - Error Handling

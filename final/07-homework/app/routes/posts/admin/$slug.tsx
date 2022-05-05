@@ -12,10 +12,12 @@ import type { Post } from "~/models/post.server";
 import { updatePost } from "~/models/post.server";
 import { deletePost } from "~/models/post.server";
 import { createPost, getPost } from "~/models/post.server";
+import { requireAdminUser } from "~/session.server";
 
 type LoaderData = { post: Post | null };
 
-export const loader: LoaderFunction = async ({ params }) => {
+export const loader: LoaderFunction = async ({ request, params }) => {
+  await requireAdminUser(request);
   invariant(params.slug, "slug not found");
   if (params.slug === "new") {
     return json<LoaderData>({ post: null });

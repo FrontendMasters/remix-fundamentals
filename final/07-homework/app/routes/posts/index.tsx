@@ -1,26 +1,30 @@
 import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
-import { getPosts } from "~/models/post.server";
+import { getPostListItems } from "~/models/post.server";
+import { useOptionalAdminUser } from "~/utils";
 
 type LoaderData = {
-  // this is a handy way to say: "posts is whatever type getPosts resolves to"
-  posts: Awaited<ReturnType<typeof getPosts>>;
+  // this is a handy way to say: "posts is whatever type getPostListItems resolves to"
+  posts: Awaited<ReturnType<typeof getPostListItems>>;
 };
 
 export const loader = async () => {
   return json<LoaderData>({
-    posts: await getPosts(),
+    posts: await getPostListItems(),
   });
 };
 
 export default function Posts() {
   const { posts } = useLoaderData() as LoaderData;
+  const adminUser = useOptionalAdminUser();
   return (
     <main>
       <h1>Posts</h1>
-      <Link to="admin" className="text-red-600 underline">
-        Admin
-      </Link>
+      {adminUser ? (
+        <Link to="admin" className="text-red-600 underline">
+          Admin
+        </Link>
+      ) : null}
       <ul>
         {posts.map((post) => (
           <li key={post.slug}>

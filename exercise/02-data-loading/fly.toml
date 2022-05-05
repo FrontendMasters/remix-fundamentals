@@ -1,4 +1,4 @@
-app = "01-routing-9ae9"
+app = "remix-workshop-app"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = [ ]
