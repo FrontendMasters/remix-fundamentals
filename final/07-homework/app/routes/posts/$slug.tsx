@@ -1,7 +1,7 @@
 import { marked } from "marked";
 import type { LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link, useCatch, useLoaderData, useParams } from "@remix-run/react";
 import invariant from "tiny-invariant";
 
 import type { Post } from "~/models/post.server";
@@ -14,7 +14,9 @@ export const loader: LoaderFunction = async ({ params }) => {
   invariant(params.slug, `params.slug is required`);
 
   const post = await getPost(params.slug);
-  invariant(post, `Post not found: ${params.slug}`);
+  if (!post) {
+    throw new Response("not found", { status: 404 });
+  }
 
   const html = marked(post.markdown);
   return json<LoaderData>({ post, html });
@@ -37,4 +39,15 @@ export default function PostSlug() {
       ) : null}
     </main>
   );
+}
+
+export function CatchBoundary() {
+  const caught = useCatch();
+  const params = useParams();
+
+  if (caught.status === 404) {
+    return <div>There was no blog post found with the slug {params.slug}</div>;
+  }
+
+  throw new Error(`Unexpected caught response with status: ${caught.status}`);
 }

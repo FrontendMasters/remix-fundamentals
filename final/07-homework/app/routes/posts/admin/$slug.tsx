@@ -3,7 +3,9 @@ import { json, redirect } from "@remix-run/node";
 import {
   Form,
   useActionData,
+  useCatch,
   useLoaderData,
+  useParams,
   useTransition,
 } from "@remix-run/react";
 import invariant from "tiny-invariant";
@@ -160,4 +162,15 @@ export default function PostAdmin() {
       </div>
     </Form>
   );
+}
+
+export function CatchBoundary() {
+  const caught = useCatch();
+  const params = useParams();
+
+  if (caught.status === 404) {
+    return <div>There was no blog post found with the slug {params.slug}</div>;
+  }
+
+  throw new Error(`Unexpected caught response with status: ${caught.status}`);
 }

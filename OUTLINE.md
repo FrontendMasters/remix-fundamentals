@@ -11,7 +11,6 @@
 - Homework includes:
   - Data Optimization
   - Update/Delete
-  - Optimistic UI
   - Error Handling
   - Authentication
   - Deployment
