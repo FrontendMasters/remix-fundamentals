@@ -27,9 +27,10 @@ jobs:
       - name: ʦ TypeScript
         run: npm run typecheck
 
+      - name: ⬣ Lint
+        run: npm run lint
+
       - name: 🔩 Build
         run: npm run build
         env:
           NODE_ENV: production
-          COMMIT_SHA: ${{ github.sha }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
