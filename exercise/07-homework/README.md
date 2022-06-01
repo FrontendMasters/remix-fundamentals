@@ -1,6 +1,5 @@
-# 06. Progressive Enhancement
+# 07. Homework
 
-Let's learn about progressive enhancement.
+Let's explore remix!
 
-- Start: https://remix.run/docs/en/v1/tutorials/blog#progressive-enhancement
-- Stop: https://remix.run/docs/en/v1/tutorials/blog#homework
+- Start: https://remix.run/docs/en/v1/tutorials/blog#homework
