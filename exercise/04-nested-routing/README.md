@@ -1,6 +1,18 @@
 # 04. Nested Routing
 
-Let's learn about dynamic parameters.
+## 📝 Notes
 
-- Start: https://remix.run/docs/en/v1/tutorials/blog#nested-routing
-- Stop: https://remix.run/docs/en/v1/tutorials/blog#actions
+## 🤓 Background
+
+TODO:
+
+## 💪 Exercise
+
+## 🗃 Files
+
+## 🦉 Elaboration and Feedback
+
+After the instruction, if you want to remember what you've just learned, then
+fill out the elaboration and feedback form:
+
+https://ws.kcd.im/?ws=Remix%20Fundamentals&e=4%3A%2004.%20Nested%20Routing&em=

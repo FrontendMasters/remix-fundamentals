@@ -1,5 +1,6 @@
 {
   "name": "remix-workshop",
+  "title": "Remix Fundamentals",
   "version": "1.0.0",
   "description": "Learn the fundamentals of Remix with this workshop",
   "main": "index.js",
