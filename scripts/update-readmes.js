@@ -9,7 +9,7 @@ glob
   .sync("exercise/**/README.md", { ignore: ["**/node_modules/**"] })
   .forEach((filepath, index) => {
     const fullFilepath = path.join(process.cwd(), filepath);
-    const contents = fs.readFileSync(fullFilepath, {
+    let contents = fs.readFileSync(fullFilepath, {
       encoding: "utf-8",
     });
     const firstLine = contents.split("\n")[0];
@@ -21,21 +21,27 @@ glob
     const workshop = encodeURIComponent(projectTitle);
     const exercise = encodeURIComponent(`${index + 1}: ${title}`);
     const link = `https://ws.kcd.im/?ws=${workshop}&e=${exercise}&em=`;
-    if (contents.includes(link)) {
-      return;
+    if (!contents.includes(link)) {
+      const feedbackLinkRegex = /https?:\/\/ws\.kcd\.im.*?\n/;
+
+      if (!feedbackLinkRegex.test(contents)) {
+        throw new Error(
+          `Exercise "${filepath}" is missing workshop feedback link`
+        );
+      }
+      contents = contents.replace(feedbackLinkRegex, link);
+      fs.writeFileSync(fullFilepath, newContents);
     }
 
-    const feedbackLinkRegex = /https?:\/\/ws\.kcd\.im.*?\n/;
-
-    if (!feedbackLinkRegex.test(contents)) {
-      throw new Error(
-        `Exercise "${filepath}" is missing workshop feedback link`
-      );
-    }
-    const newContents = contents.replace(feedbackLinkRegex, link);
-    fs.writeFileSync(fullFilepath, newContents);
-    fs.writeFileSync(
-      fullFilepath.replace("/exercise/", "/final/"),
-      newContents
+    const finals = glob.sync(
+      `final/${path.basename(path.dirname(filepath))}*/README.md`
     );
+    for (const final of finals) {
+      const currentContents = fs.readFileSync(final, {
+        encoding: "utf-8",
+      });
+      if (currentContents !== contents) {
+        fs.writeFileSync(final, contents);
+      }
+    }
   });

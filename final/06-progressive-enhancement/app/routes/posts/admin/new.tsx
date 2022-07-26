@@ -1,4 +1,4 @@
-import type { ActionFunction } from "@remix-run/node";
+import type { ActionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
 import { Form, useActionData, useTransition } from "@remix-run/react";
@@ -13,7 +13,7 @@ type ActionData =
       markdown: null | string;
     }
   | undefined;
-export const action: ActionFunction = async ({ request }) => {
+export async function action({ request }: ActionArgs) {
   const formData = await request.formData();
 
   const title = formData.get("title");
@@ -37,7 +37,7 @@ export const action: ActionFunction = async ({ request }) => {
   await createPost({ title, slug, markdown });
 
   return redirect("/posts/admin");
-};
+}
 
 const inputClassName = `w-full rounded border border-gray-500 px-2 py-1 text-lg`;
 

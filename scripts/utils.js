@@ -5,10 +5,26 @@ const cp = require("child_process");
 const dirExists = async (dir) =>
   Boolean(await fs.promises.stat(dir).catch(() => false));
 
-const resolvePath = (p) =>
-  [...getExerciseDirs(), ...getFinalDirs()].find((dir) => {
-    return path.resolve(dir).startsWith(path.resolve(p));
-  });
+function resolvePath(p) {
+  if (/\d+\.\d+/.test(p)) {
+    const { prefix, exerciseNumber, extraCreditNumber } =
+      p.match(
+        /(?<prefix>.*?)(?<exerciseNumber>\d+).*\.(?<extraCreditNumber>\d+)/
+      )?.groups ?? {};
+    return [...getExerciseDirs(), ...getFinalDirs()].find((dir) => {
+      const dirname = path.basename(dir);
+      return (
+        path.resolve(dir).startsWith(path.resolve(prefix)) &&
+        dirname.startsWith(exerciseNumber.padStart(2, "0")) &&
+        dirname.includes(`.extra-${extraCreditNumber.padStart(2, "0")}`)
+      );
+    });
+  } else {
+    return [...getExerciseDirs(), ...getFinalDirs()].find((dir) => {
+      return path.resolve(dir).startsWith(path.resolve(p));
+    });
+  }
+}
 
 function getExerciseDirs() {
   return fs.readdirSync("./exercise").map((dir) => `./exercise/${dir}`);

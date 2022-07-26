@@ -1,16 +1,13 @@
 import { marked } from "marked";
-import type { LoaderFunction } from "@remix-run/node";
+import type { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Link, useCatch, useLoaderData, useParams } from "@remix-run/react";
 import invariant from "tiny-invariant";
 
-import type { Post } from "~/models/post.server";
 import { getPost } from "~/models/post.server";
 import { useOptionalAdminUser } from "~/utils";
 
-type LoaderData = { post: Post; html: string };
-
-export const loader: LoaderFunction = async ({ params }) => {
+export async function loader({ params }: LoaderArgs) {
   invariant(params.slug, `params.slug is required`);
 
   const post = await getPost(params.slug);
@@ -19,11 +16,11 @@ export const loader: LoaderFunction = async ({ params }) => {
   }
 
   const html = marked(post.markdown);
-  return json<LoaderData>({ post, html });
-};
+  return json({ post, html });
+}
 
 export default function PostSlug() {
-  const { post, html } = useLoaderData() as LoaderData;
+  const { post, html } = useLoaderData<typeof loader>();
   const adminUser = useOptionalAdminUser();
   return (
     <main className="mx-auto max-w-4xl">
