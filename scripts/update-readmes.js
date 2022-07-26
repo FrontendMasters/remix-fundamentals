@@ -30,7 +30,7 @@ glob
         );
       }
       contents = contents.replace(feedbackLinkRegex, link);
-      fs.writeFileSync(fullFilepath, newContents);
+      fs.writeFileSync(fullFilepath, contents);
     }
 
     const finals = glob.sync(

@@ -1,12 +1,5 @@
-const fs = require("fs/promises");
-const path = require("path");
 const cp = require("child_process");
-const {
-  getExerciseDirs,
-  getFinalDirs,
-  resolvePath,
-  dirExists,
-} = require("./scripts/utils");
+const { resolvePath, dirExists } = require("./scripts/utils");
 
 let { 2: first, 3: second } = process.argv;
 
@@ -33,6 +26,8 @@ async function go() {
     console.error(`${process.argv[3]} (${second}) does not exist`);
     return;
   }
+
+  console.log(`Showing diff between ${first}/app and ${second}/app`);
 
   cp.spawnSync(`git diff --no-index ./${first}/app ./${second}/app`, {
     shell: true,

@@ -1,5 +1,5 @@
 {
-  "name": "final-06-progressive-enhancement",
+  "name": "nal-06-progressive-enhancement",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",

@@ -1,5 +1,5 @@
 {
-  "name": "exercise-06-progressive-enhancement",
+  "name": "ercise-06-progressive-enhancement",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",

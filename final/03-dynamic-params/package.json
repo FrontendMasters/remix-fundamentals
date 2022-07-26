@@ -1,5 +1,5 @@
 {
-  "name": "final-03-dynamic-params",
+  "name": "nal-03-dynamic-params",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",

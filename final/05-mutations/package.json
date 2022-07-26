@@ -1,5 +1,5 @@
 {
-  "name": "final-05-mutations",
+  "name": "nal-05-mutations",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",

@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
-const { getExerciseDirs, getFinalDirs } = require("./utils");
+const { getAppDirs } = require("./utils");
 
-for (const dir of [...getExerciseDirs(), ...getFinalDirs()]) {
+for (const dir of getAppDirs()) {
   const pkgName = `${path.dirname(dir).slice(2)}-${path.basename(dir)}`;
   try {
     const pathToPkg = path.join(__dirname, "..", dir, "package.json");

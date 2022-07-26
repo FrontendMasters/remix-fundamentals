@@ -1,42 +1,28 @@
 const fs = require("fs");
-const path = require("path");
 const cp = require("child_process");
+const { matchSorter } = require("match-sorter");
+const glob = require("glob");
 
 const dirExists = async (dir) =>
   Boolean(await fs.promises.stat(dir).catch(() => false));
 
-function resolvePath(p) {
-  if (/\d+\.\d+/.test(p)) {
-    const { prefix, exerciseNumber, extraCreditNumber } =
-      p.match(
-        /(?<prefix>.*?)(?<exerciseNumber>\d+).*\.(?<extraCreditNumber>\d+)/
-      )?.groups ?? {};
-    return [...getExerciseDirs(), ...getFinalDirs()].find((dir) => {
-      const dirname = path.basename(dir);
-      return (
-        path.resolve(dir).startsWith(path.resolve(prefix)) &&
-        dirname.startsWith(exerciseNumber.padStart(2, "0")) &&
-        dirname.includes(`.extra-${extraCreditNumber.padStart(2, "0")}`)
-      );
-    });
-  } else {
-    return [...getExerciseDirs(), ...getFinalDirs()].find((dir) => {
-      return path.resolve(dir).startsWith(path.resolve(p));
-    });
+function resolvePath(search) {
+  const appDirs = getAppDirs();
+  if (search.startsWith("./")) {
+    search = search.slice(2);
   }
+
+  return matchSorter(appDirs, search)?.[0];
 }
 
-function getExerciseDirs() {
-  return fs.readdirSync("./exercise").map((dir) => `./exercise/${dir}`);
-}
-
-function getFinalDirs() {
-  return fs.readdirSync("./final").map((dir) => `./final/${dir}`);
+function getAppDirs() {
+  const pkg = require("../package.json");
+  return pkg.workspaces.flatMap((w) => glob.sync(w));
 }
 
 function runInDirs(script, dirs = []) {
   if (!dirs.length) {
-    dirs = [...getExerciseDirs(), ...getFinalDirs()];
+    dirs = getAppDirs();
   }
   console.log(`🏎  "${script}":\n- ${dirs.join("\n- ")}\n`);
 
@@ -47,8 +33,7 @@ function runInDirs(script, dirs = []) {
 }
 
 module.exports = {
-  getExerciseDirs,
-  getFinalDirs,
+  getAppDirs,
   runInDirs,
   resolvePath,
   dirExists,
