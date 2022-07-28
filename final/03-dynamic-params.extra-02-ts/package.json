@@ -1,5 +1,5 @@
 {
-  "name": "final-03-dynamic-params",
+  "name": "final-03-dynamic-params.extra-02-ts",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",
