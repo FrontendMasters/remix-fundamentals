@@ -82,4 +82,4 @@ We'll learn more about nested routing in a future exercise and then we can talk 
 After the instruction, if you want to remember what you've just learned, then
 fill out the elaboration and feedback form:
 
-https://ws.kcd.im/?ws=Remix%20Fundamentals&e=3%3A%2003.%20Dynamic%20Params&em=
+https://ws.kcd.im/?ws=Remix%20Fundamentals&e=03.%20Dynamic%20Params&em=

@@ -18,4 +18,4 @@ TODO:
 After the instruction, if you want to remember what you've just learned, then
 fill out the elaboration and feedback form:
 
-https://ws.kcd.im/?ws=Remix%20Fundamentals&e=5%3A%2005.%20Mutations&em=
+https://ws.kcd.im/?ws=Remix%20Fundamentals&e=05.%20Mutations&em=

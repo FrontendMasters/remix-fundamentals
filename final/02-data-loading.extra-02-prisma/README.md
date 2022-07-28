@@ -133,4 +133,4 @@ As an extra tip, it's pretty common practice to put interaction with database mo
 After the instruction, if you want to remember what you've just learned, then
 fill out the elaboration and feedback form:
 
-https://ws.kcd.im/?ws=Remix%20Fundamentals&e=2%3A%2002.%20Data%20Loading&em=
+https://ws.kcd.im/?ws=Remix%20Fundamentals&e=02.%20Data%20Loading&em=

@@ -15,10 +15,11 @@ glob
     });
     const title = await getReadmeTitle(contents);
     const workshop = encodeURIComponent(projectTitle);
-    const exercise = encodeURIComponent(`${index + 1}: ${title}`);
+    const exerciseNumber = (index + 1).toString().padStart(2, "0");
+    const exercise = encodeURIComponent(`${exerciseNumber}. ${title}`);
     const link = `https://ws.kcd.im/?ws=${workshop}&e=${exercise}&em=`;
     if (!contents.includes(link)) {
-      const feedbackLinkRegex = /https?:\/\/ws\.kcd\.im.*?\n/;
+      const feedbackLinkRegex = /https?:\/\/ws\.kcd\.im.*?(\n|$)/;
 
       if (!feedbackLinkRegex.test(contents)) {
         throw new Error(
@@ -26,6 +27,7 @@ glob
         );
       }
       contents = contents.replace(feedbackLinkRegex, link);
+      contents = contents.trim() + "\n";
       fs.writeFileSync(fullFilepath, contents);
     }
 

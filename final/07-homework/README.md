@@ -17,4 +17,4 @@ TODO:
 After the instruction, if you want to remember what you've just learned, then
 fill out the elaboration and feedback form:
 
-https://ws.kcd.im/?ws=Remix%20Fundamentals&e=7%3A%2007.%20Homework&em=
+https://ws.kcd.im/?ws=Remix%20Fundamentals&e=07.%20Homework&em=

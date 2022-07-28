@@ -70,4 +70,4 @@ And here's what you can use as the default export of the posts route:
 After the instruction, if you want to remember what you've just learned, then
 fill out the elaboration and feedback form:
 
-https://ws.kcd.im/?ws=Remix%20Fundamentals&e=1%3A%2001.%20Routing&em=
+https://ws.kcd.im/?ws=Remix%20Fundamentals&e=01.%20Routing&em=
