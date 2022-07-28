@@ -82,10 +82,9 @@ about what would be in some of the other files.
 
 ## 💪 Exercise
 
-> Note: we've updated skipped over the "Pulling from a data source" step because
-> that's not super relevant for what we're learning today.
-
 ## 🗃 Files
+
+<!-- - `app/routs/posts/index.tsx` -->
 
 ## 🦉 Elaboration and Feedback
 
