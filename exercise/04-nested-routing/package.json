@@ -16,7 +16,6 @@
     "typecheck": "tsc -b",
     "validate": "run-p lint typecheck"
   },
-  "prettier": {},
   "eslintIgnore": [
     "/node_modules",
     "/build",
