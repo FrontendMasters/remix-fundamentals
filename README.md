@@ -130,6 +130,11 @@ the database ready for auth), so the diff command can help with that:
 node diff final/04 exercise/05
 ```
 
+NOTE: Unfortunately, there's no way to exclude some files from the diff we're
+doing, so we limit the diff to only the `app` directory (where almost all of
+your code changes happen). You'll need to ignore any changes to
+`styles/tailwind.css` however. That's a generated file. Sorry about that.
+
 ## Workshop Feedback
 
 Each exercise has an Elaboration and Feedback link. Please fill that out after
