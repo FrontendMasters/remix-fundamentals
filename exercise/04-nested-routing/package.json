@@ -1,5 +1,5 @@
 {
-  "name": "ercise-04-nested-routing",
+  "name": "exercise-04-nested-routing",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",

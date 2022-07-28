@@ -1,5 +1,5 @@
 {
-  "name": "nal-07-homework",
+  "name": "final-07-homework",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",

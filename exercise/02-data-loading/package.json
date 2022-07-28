@@ -1,5 +1,5 @@
 {
-  "name": "ercise-02-data-loading",
+  "name": "exercise-02-data-loading",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",

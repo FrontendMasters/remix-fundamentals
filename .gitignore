@@ -6,6 +6,7 @@ workspace/
 **/public/build
 **/app/styles/tailwind.css
 **/prisma/data.db
+scripts/db.json
 
 # in a real app you'd want to not commit the .env
 # file as well, but since this is for a workshop

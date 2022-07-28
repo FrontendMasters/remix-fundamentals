@@ -1,5 +1,5 @@
 {
-  "name": "nal-02-data-loading.extra-02-prisma",
+  "name": "final-02-data-loading.extra-02-prisma",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",

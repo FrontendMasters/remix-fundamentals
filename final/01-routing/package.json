@@ -1,5 +1,5 @@
 {
-  "name": "nal-01-routing",
+  "name": "final-01-routing",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",

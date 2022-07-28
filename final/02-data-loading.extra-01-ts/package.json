@@ -1,5 +1,5 @@
 {
-  "name": "nal-02-data-loading.extra-01-ts",
+  "name": "final-02-data-loading.extra-01-ts",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",

@@ -1,5 +1,5 @@
 {
-  "name": "ercise-07-homework",
+  "name": "exercise-07-homework",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",

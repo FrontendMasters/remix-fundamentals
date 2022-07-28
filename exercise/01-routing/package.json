@@ -1,5 +1,5 @@
 {
-  "name": "ercise-01-routing",
+  "name": "exercise-01-routing",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",

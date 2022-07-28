@@ -1,5 +1,5 @@
 {
-  "name": "nal-04-nested-routing",
+  "name": "final-04-nested-routing",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",

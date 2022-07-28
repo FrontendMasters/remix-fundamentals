@@ -77,28 +77,29 @@ the `dev.js` script in the root of this repository:
 # to run the first exercise app:
 node dev exercise/01
 
+# This runs the first exercise too:
+node dev 1
+
 # or to run the final version of the 2nd exercise
 node dev final/02
+# this runs the 1st extra credit of the final version of the 2nd exercise
+node dev final2.1
+
+# this will just ask you which one you want to run
+node dev
 ```
 
 Each will run on a unique port so you can run multiple apps at once.
 
-I suggest that as you go through the workshop, rather than opening this whole
-repo in an editor window, you open each exercise folder in an individual editor
-window (this will make things like ⌘+P more useful).
+Unfortunately, due to the nature of this workshop, ⌘+P isn't very useful
+(because there are a LOT of duplicate files). If you'd prefer, you can open each
+exercise in its own editor. Or just make sure to prefix your searches with
+"exercise/03" (for example) so you're searching in the right app.
 
 ### Instructions
 
-This workshop follows along with
-[the official Blog Tutorial](https://remix.run/docs/en/v1/tutorials/blog). It's
-completely self-paced. The benefit of using this repository is you can skip
-around to different parts of the tutorial or even skip over different parts
-completely.
-
-When you're ready to start a section of the tutorial, open that section's
-exercise directory in your editor and follow along with what the tutorial says
-to do. To challenge yourself a little extra, you can ignore the code snippets in
-the tutorial.
+For each exercise, follow the instructions in the `README.md` file of the
+exercise directory to learn what the objectives are.
 
 You can us the `diff.js` script to be shown the differences between what's in
 any of the apps. For example:
@@ -106,6 +107,15 @@ any of the apps. For example:
 ```sh
 # to be shown the differences between the first exercise and the final version:
 node diff exercise/01 final/01
+
+# We've got some sensible defaults in place so you can get the same diff as above with:
+node diff 1
+
+# And for comparing yourself to extra credits, you can run:
+node diff exercise/02 final/02.2
+
+# this will just ask you which ones you want to diff
+node diff
 ```
 
 This can be handy for you to run when you think you're done but things aren't

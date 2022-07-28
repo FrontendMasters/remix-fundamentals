@@ -1,23 +1,19 @@
-const path = require("path");
-const fs = require("fs");
-const glob = require("glob");
+import path from "path";
+import fs from "fs";
+import glob from "glob";
+import { getReadmeTitle } from "../utils/get-readme-title";
 
 const pkg = require(path.join(process.cwd(), "package.json"));
 const { title: projectTitle } = pkg;
 
 glob
   .sync("exercise/**/README.md", { ignore: ["**/node_modules/**"] })
-  .forEach((filepath, index) => {
+  .forEach(async (filepath, index) => {
     const fullFilepath = path.join(process.cwd(), filepath);
     let contents = fs.readFileSync(fullFilepath, {
       encoding: "utf-8",
     });
-    const firstLine = contents.split("\n")[0];
-    const titleMatch = firstLine.match(/# (?<title>.*)$/);
-    if (!titleMatch) {
-      throw new Error(`Title is invalid for "${filepath}"`);
-    }
-    const title = titleMatch.groups.title.trim();
+    const title = await getReadmeTitle(contents);
     const workshop = encodeURIComponent(projectTitle);
     const exercise = encodeURIComponent(`${index + 1}: ${title}`);
     const link = `https://ws.kcd.im/?ws=${workshop}&e=${exercise}&em=`;

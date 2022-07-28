@@ -1,5 +1,5 @@
 {
-  "name": "ercise-03-dynamic-params",
+  "name": "exercise-03-dynamic-params",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",
