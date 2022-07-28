@@ -7,9 +7,13 @@
 
     { "path": "exercise/02-data-loading" },
     { "path": "final/02-data-loading" },
+    { "path": "final/02-data-loading.extra-01-ts" },
+    { "path": "final/02-data-loading.extra-02-prisma" },
 
     { "path": "exercise/03-dynamic-params" },
     { "path": "final/03-dynamic-params" },
+    { "path": "final/03-dynamic-params.extra-01-marked" },
+    { "path": "final/03-dynamic-params.extra-02-ts" },
 
     { "path": "exercise/04-nested-routing" },
     { "path": "final/04-nested-routing" },
