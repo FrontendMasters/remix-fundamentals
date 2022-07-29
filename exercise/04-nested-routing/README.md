@@ -11,7 +11,7 @@ as something similar to a filepath on a filesystem:
 # filesystem
 /Users/yourname/photos/mountains/timpanogos.jpg
 # URL
-https://yourname-photos.com/mountains/timpanogos
+https://yourname.com/photos/mountains/timpanogos
 ```
 
 And just like a filesystem where files are contained within folders which are
@@ -27,6 +27,14 @@ the header/footer can work without worrying about the data the various other
 product teams need, and those teams don't need to worry about what the
 header/footer team needs either. This eliminates one of the major challenges
 that lead organizations to desire a complicated micro-frontend architecture.
+
+Another neat feature of nested routing comes in the form of relative route
+calculation for the `<Link />` `to` prop. So if I render a `<Link />` component
+from within the route `/photos` and I want it to navigate to `/photos/mountains`
+then my `to` prop can be simply `to="mountains"` rather than
+`to="/photos/mountains"`. This makes the code much more portable and just
+generally easier to deal with (that said, you _can_ still do an absolute path if
+you like, you can even do `../` paths!).
 
 ## 💪 Exercise
 
@@ -72,6 +80,45 @@ After you're finished, it should look something like this:
   </Route>
 </Routes>
 ```
+
+💰 Because this is a Remix workshop (not a React one), I'm going to give you
+some JSX you can use in some of these new files you'll create:
+
+```tsx filename=app/routes/posts/admin.tsx
+<div className="mx-auto max-w-4xl">
+  <h1 className="my-6 mb-2 border-b-2 text-center text-3xl">Blog Admin</h1>
+  <div className="grid grid-cols-4 gap-6">
+    <nav className="col-span-4 md:col-span-1">
+      <ul>
+        {posts.map((post) => (
+          <li key={post.slug}>
+            <Link to={post.slug} className="text-blue-600 underline">
+              {post.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <main className="col-span-4 md:col-span-3">
+      <Outlet />
+    </main>
+  </div>
+</div>
+```
+
+```tsx filename=app/routes/posts/admin/new.tsx
+<h2>New Post</h2>
+```
+
+```tsx filename=app/routes/posts/admin/index.tsx
+<p>
+  <Link to="new" className="text-blue-600 underline">
+    Create a New Post
+  </Link>
+</p>
+```
+
+(We'll expand on these 👆 in the next exercise)
 
 ## 🗃 Files
 
