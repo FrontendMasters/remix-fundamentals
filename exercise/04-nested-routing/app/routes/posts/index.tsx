@@ -13,6 +13,7 @@ export default function Posts() {
   return (
     <main>
       <h1>Posts</h1>
+      {/* 🐨 Add a Link to "admin" here */}
       <ul>
         {posts.map((post) => (
           <li key={post.slug}>

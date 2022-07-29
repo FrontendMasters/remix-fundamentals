@@ -14,10 +14,9 @@ export async function loader({ params }: LoaderArgs) {
 }
 
 export default function PostSlug() {
-  const { post, html } = useLoaderData<typeof loader>();
+  const { post, html } = useLoaderData();
   return (
     <main className="mx-auto max-w-4xl">
-      {/* @ts-expect-error we'll clean this up in extra credit */}
       <h1 className="my-6 border-b-2 text-center text-3xl">{post.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </main>
