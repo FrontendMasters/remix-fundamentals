@@ -21,22 +21,19 @@ export async function action({ request }: ActionArgs) {
   const remember = formData.get("remember");
 
   if (!validateEmail(email)) {
-    return json(
-      { errors: { email: "Email is invalid", password: null } },
-      { status: 400 }
-    );
+    return json({ errors: { email: "Email is invalid" } }, { status: 400 });
   }
 
   if (typeof password !== "string" || password.length === 0) {
     return json(
-      { errors: { email: null, password: "Password is required" } },
+      { errors: { password: "Password is required" } },
       { status: 400 }
     );
   }
 
   if (password.length < 8) {
     return json(
-      { errors: { email: null, password: "Password is too short" } },
+      { errors: { password: "Password is too short" } },
       { status: 400 }
     );
   }
@@ -49,7 +46,7 @@ export async function action({ request }: ActionArgs) {
 
       if (!user) {
         return json(
-          { errors: { email: "Invalid email or password", password: null } },
+          { errors: { email: "Invalid email or password" } },
           { status: 400 }
         );
       }
@@ -60,12 +57,7 @@ export async function action({ request }: ActionArgs) {
       const existingUser = await getUserByEmail(email);
       if (existingUser) {
         return json(
-          {
-            errors: {
-              email: "A user already exists with this email",
-              password: null,
-            },
-          },
+          { errors: { email: "A user already exists with this email" } },
           { status: 400 }
         );
       }
@@ -76,10 +68,7 @@ export async function action({ request }: ActionArgs) {
       break;
     }
     default: {
-      return json(
-        { errors: { email: "Invalid intent", password: null } },
-        { status: 400 }
-      );
+      return json({ errors: { email: "Invalid intent" } }, { status: 400 });
     }
   }
 
@@ -103,16 +92,21 @@ export default function LoginPage() {
   const actionData = useActionData<typeof action>();
   const emailRef = React.useRef<HTMLInputElement>(null);
   const passwordRef = React.useRef<HTMLInputElement>(null);
+  let emailError: string | null = null;
+  let passwordError: string | null = null;
+  if (actionData && actionData.errors) {
+    const { errors } = actionData;
+    emailError = "email" in errors ? errors.email : null;
+    passwordError = "password" in errors ? errors.password : null;
+  }
 
   React.useEffect(() => {
-    // @ts-expect-error, we're working on it: https://github.com/remix-run/remix/pull/3878
-    if (actionData?.errors?.email) {
+    if (emailError) {
       emailRef.current?.focus();
-      // @ts-expect-error, we're working on it: https://github.com/remix-run/remix/pull/3878
-    } else if (actionData?.errors?.password) {
+    } else if (passwordError) {
       passwordRef.current?.focus();
     }
-  }, [actionData]);
+  }, [emailError, passwordError]);
 
   return (
     <div className="flex min-h-full flex-col justify-center">
@@ -134,17 +128,14 @@ export default function LoginPage() {
                 name="email"
                 type="email"
                 autoComplete="email"
-                // @ts-expect-error, we're working on it: https://github.com/remix-run/remix/pull/3878
-                aria-invalid={actionData?.errors?.email ? true : undefined}
+                aria-invalid={emailError ? true : undefined}
                 aria-describedby="email-error"
                 className="w-full rounded border border-gray-500 px-2 py-1 text-lg"
               />
 
-              {/* @ts-expect-error, we're working on it: https://github.com/remix-run/remix/pull/3878 */}
-              {actionData?.errors?.email && (
+              {emailError && (
                 <div className="pt-1 text-red-700" id="email-error">
-                  {/* @ts-expect-error, we're working on it: https://github.com/remix-run/remix/pull/3878 */}
-                  {actionData.errors.email}
+                  {emailError}
                 </div>
               )}
             </div>
@@ -164,16 +155,13 @@ export default function LoginPage() {
                 name="password"
                 type="password"
                 autoComplete="current-password"
-                // @ts-expect-error, we're working on it: https://github.com/remix-run/remix/pull/3878
-                aria-invalid={actionData?.errors?.password ? true : undefined}
+                aria-invalid={passwordError ? true : undefined}
                 aria-describedby="password-error"
                 className="w-full rounded border border-gray-500 px-2 py-1 text-lg"
               />
-              {/* @ts-expect-error, we're working on it: https://github.com/remix-run/remix/pull/3878 */}
-              {actionData?.errors?.password && (
+              {passwordError && (
                 <div className="pt-1 text-red-700" id="password-error">
-                  {/* @ts-expect-error, we're working on it: https://github.com/remix-run/remix/pull/3878 */}
-                  {actionData.errors.password}
+                  {passwordError}
                 </div>
               )}
             </div>
