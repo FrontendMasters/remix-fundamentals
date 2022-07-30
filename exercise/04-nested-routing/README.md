@@ -28,6 +28,8 @@ product teams need, and those teams don't need to worry about what the
 header/footer team needs either. This eliminates one of the major challenges
 that lead organizations to desire a complicated micro-frontend architecture.
 
+TODO: explain Outlet
+
 Another neat feature of nested routing comes in the form of relative route
 calculation for the `<Link />` `to` prop. So if I render a `<Link />` component
 from within the route `/photos` and I want it to navigate to `/photos/mountains`
@@ -100,7 +102,7 @@ some JSX you can use in some of these new files you'll create:
       </ul>
     </nav>
     <main className="col-span-4 md:col-span-3">
-      <Outlet />
+      {/* 🐨 add an Outlet component here */}
     </main>
   </div>
 </div>
