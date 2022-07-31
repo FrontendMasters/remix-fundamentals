@@ -59,6 +59,7 @@ export default function NewPost() {
             <em className="text-red-600">{errors.markdown}</em>
           ) : null}
         </label>
+        <br />
         <textarea
           id="markdown"
           rows={20}
