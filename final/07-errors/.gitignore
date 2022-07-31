@@ -1,0 +1,11 @@
+node_modules
+
+/build
+/public/build
+# Normally you ignore this file, but to make the workshop easier we'll keep it around
+# .env
+
+/prisma/data.db
+/prisma/data.db-journal
+
+/app/styles/tailwind.css

@@ -27,14 +27,14 @@ export async function action({ request }: ActionArgs) {
   if (typeof password !== "string" || password.length === 0) {
     return json(
       { errors: { password: "Password is required" } },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
   if (password.length < 8) {
     return json(
       { errors: { password: "Password is too short" } },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -47,7 +47,7 @@ export async function action({ request }: ActionArgs) {
       if (!user) {
         return json(
           { errors: { email: "Invalid email or password" } },
-          { status: 400 }
+          { status: 400 },
         );
       }
       userId = user.id;
@@ -58,7 +58,7 @@ export async function action({ request }: ActionArgs) {
       if (existingUser) {
         return json(
           { errors: { email: "A user already exists with this email" } },
-          { status: 400 }
+          { status: 400 },
         );
       }
 

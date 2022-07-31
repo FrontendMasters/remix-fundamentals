@@ -43,7 +43,7 @@ export async function getUser(request: Request): Promise<null | User> {
 
 export async function requireUserId(
   request: Request,
-  redirectTo: string = new URL(request.url).pathname
+  redirectTo: string = new URL(request.url).pathname,
 ): Promise<string> {
   const userId = await getUserId(request);
   if (!userId) {

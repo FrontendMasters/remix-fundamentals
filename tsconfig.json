@@ -21,7 +21,13 @@
       "path": "exercise/06-progressive-enhancement"
     },
     {
-      "path": "exercise/07-homework"
+      "path": "exercise/07-errors"
+    },
+    {
+      "path": "exercise/08-data-optimization"
+    },
+    {
+      "path": "exercise/09-env-vars"
     },
     {
       "path": "final/01-routing"
@@ -60,7 +66,19 @@
       "path": "final/06-progressive-enhancement.extra-01-prefetch"
     },
     {
-      "path": "final/07-homework"
+      "path": "final/07-errors"
+    },
+    {
+      "path": "final/07-errors.extra-01-catch-boundaries"
+    },
+    {
+      "path": "final/08-data-optimization"
+    },
+    {
+      "path": "final/09-env-vars"
+    },
+    {
+      "path": "final/12-final"
     }
   ]
 }
