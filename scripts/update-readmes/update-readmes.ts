@@ -1,6 +1,7 @@
 import path from "path";
 import fs from "fs";
 import glob from "glob";
+import prettier from "prettier";
 import { getReadmeTitle } from "../utils/get-readme-title";
 
 const pkg = require(path.join(process.cwd(), "package.json"));
@@ -23,16 +24,16 @@ glob
 
       if (!feedbackLinkRegex.test(contents)) {
         throw new Error(
-          `Exercise "${filepath}" is missing workshop feedback link`
+          `Exercise "${filepath}" is missing workshop feedback link`,
         );
       }
       contents = contents.replace(feedbackLinkRegex, link);
-      contents = contents.trim() + "\n";
+      contents = prettier.format(contents, { parser: "markdown" });
       fs.writeFileSync(fullFilepath, contents);
     }
 
     const finals = glob.sync(
-      `final/${path.basename(path.dirname(filepath))}*/README.md`
+      `final/${path.basename(path.dirname(filepath))}*/README.md`,
     );
     for (const final of finals) {
       const currentContents = fs.readFileSync(final, {

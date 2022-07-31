@@ -204,7 +204,7 @@ export async function getApps(): Promise<Array<App>> {
   return [...exerciseApps, ...finalApps, ...exampleApps];
 }
 
-async function getWorkshopRoot() {
+export async function getWorkshopRoot() {
   const { root: rootDir } = path.parse(process.cwd());
   let repoRoot = __dirname;
   while (repoRoot !== rootDir) {

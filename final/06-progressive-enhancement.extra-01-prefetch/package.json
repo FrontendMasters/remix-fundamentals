@@ -1,5 +1,5 @@
 {
-  "name": "final-06-progressive-enhancement",
+  "name": "final-06-progressive-enhancement.extra-01-prefetch",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",

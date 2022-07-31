@@ -2,29 +2,65 @@
   "files": [],
   "exclude": ["node_modules"],
   "references": [
-    { "path": "exercise/01-routing" },
-    { "path": "final/01-routing" },
-
-    { "path": "exercise/02-data-loading" },
-    { "path": "final/02-data-loading" },
-    { "path": "final/02-data-loading.extra-01-ts" },
-    { "path": "final/02-data-loading.extra-02-prisma" },
-
-    { "path": "exercise/03-dynamic-params" },
-    { "path": "final/03-dynamic-params" },
-    { "path": "final/03-dynamic-params.extra-01-marked" },
-    { "path": "final/03-dynamic-params.extra-02-ts" },
-
-    { "path": "exercise/04-nested-routing" },
-    { "path": "final/04-nested-routing" },
-
-    { "path": "exercise/05-mutations" },
-    { "path": "final/05-mutations" },
-
-    { "path": "exercise/06-progressive-enhancement" },
-    { "path": "final/06-progressive-enhancement" },
-
-    { "path": "exercise/07-homework" },
-    { "path": "final/07-homework" }
+    {
+      "path": "exercise/01-routing"
+    },
+    {
+      "path": "exercise/02-data-loading"
+    },
+    {
+      "path": "exercise/03-dynamic-params"
+    },
+    {
+      "path": "exercise/04-nested-routing"
+    },
+    {
+      "path": "exercise/05-mutations"
+    },
+    {
+      "path": "exercise/06-progressive-enhancement"
+    },
+    {
+      "path": "exercise/07-homework"
+    },
+    {
+      "path": "final/01-routing"
+    },
+    {
+      "path": "final/02-data-loading"
+    },
+    {
+      "path": "final/02-data-loading.extra-01-ts"
+    },
+    {
+      "path": "final/02-data-loading.extra-02-prisma"
+    },
+    {
+      "path": "final/03-dynamic-params"
+    },
+    {
+      "path": "final/03-dynamic-params.extra-01-marked"
+    },
+    {
+      "path": "final/03-dynamic-params.extra-02-ts"
+    },
+    {
+      "path": "final/04-nested-routing"
+    },
+    {
+      "path": "final/05-mutations"
+    },
+    {
+      "path": "final/05-mutations.extra-01-ts"
+    },
+    {
+      "path": "final/06-progressive-enhancement"
+    },
+    {
+      "path": "final/06-progressive-enhancement.extra-01-prefetch"
+    },
+    {
+      "path": "final/07-homework"
+    }
   ]
 }
