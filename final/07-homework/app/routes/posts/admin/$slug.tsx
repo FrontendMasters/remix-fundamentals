@@ -76,8 +76,7 @@ export default function PostAdmin() {
   const isCreating = transition.submission?.formData.get("intent") === "create";
   const isUpdating = transition.submission?.formData.get("intent") === "update";
   const isDeleting = transition.submission?.formData.get("intent") === "delete";
-  const isNewPost = !("post" in data);
-  const post = isNewPost ? null : data.post;
+  const isNewPost = !data.post;
 
   return (
     <Form method="post">
@@ -91,8 +90,8 @@ export default function PostAdmin() {
             type="text"
             name="title"
             className={inputClassName}
-            key={post?.slug ?? "new"}
-            defaultValue={post?.title}
+            key={data?.post?.slug ?? "new"}
+            defaultValue={data?.post?.title}
           />
         </label>
       </p>
@@ -106,8 +105,8 @@ export default function PostAdmin() {
             type="text"
             name="slug"
             className={inputClassName}
-            key={post?.slug ?? "new"}
-            defaultValue={post?.slug}
+            key={data?.post?.slug ?? "new"}
+            defaultValue={data?.post?.slug}
           />
         </label>
       </p>
@@ -124,8 +123,8 @@ export default function PostAdmin() {
           rows={20}
           name="markdown"
           className={`${inputClassName} font-mono`}
-          key={post?.slug ?? "new"}
-          defaultValue={post?.markdown}
+          key={data?.post?.slug ?? "new"}
+          defaultValue={data?.post?.markdown}
         />
       </p>
       <div className="flex justify-end gap-4">
