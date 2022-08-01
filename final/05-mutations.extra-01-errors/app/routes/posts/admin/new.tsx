@@ -60,7 +60,7 @@ export default function NewPost() {
         <br />
         <textarea
           id="markdown"
-          rows={20}
+          rows={8}
           name="markdown"
           className={`${inputClassName} font-mono`}
         />

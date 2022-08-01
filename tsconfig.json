@@ -21,19 +21,19 @@
       "path": "exercise/06-progressive-enhancement"
     },
     {
-      "path": "exercise/07-errors"
+      "path": "exercise/07-multiple-forms"
     },
     {
-      "path": "exercise/08-data-optimization"
+      "path": "exercise/08-errors"
     },
     {
-      "path": "exercise/09-env-vars"
+      "path": "exercise/09-data-optimization"
     },
     {
-      "path": "exercise/10-admin-user"
+      "path": "exercise/10-env-vars"
     },
     {
-      "path": "exercise/11-edit"
+      "path": "exercise/11-admin-user"
     },
     {
       "path": "final/01-routing"
@@ -75,28 +75,28 @@
       "path": "final/06-progressive-enhancement.extra-01-prefetch"
     },
     {
-      "path": "final/07-errors"
+      "path": "final/07-multiple-forms"
     },
     {
-      "path": "final/07-errors.extra-01-catch-boundaries"
+      "path": "final/07-multiple-forms.extra-01-finish"
     },
     {
-      "path": "final/08-data-optimization"
+      "path": "final/08-errors"
     },
     {
-      "path": "final/09-env-vars"
+      "path": "final/08-errors.extra-01-catch-boundaries"
     },
     {
-      "path": "final/10-admin-user"
+      "path": "final/09-data-optimization"
     },
     {
-      "path": "final/10-admin-user.extra-01-ui"
+      "path": "final/10-env-vars"
     },
     {
-      "path": "final/11-edit"
+      "path": "final/11-admin-user"
     },
     {
-      "path": "final/11-edit.extra-03-finished"
+      "path": "final/11-admin-user.extra-01-ui"
     }
   ]
 }
