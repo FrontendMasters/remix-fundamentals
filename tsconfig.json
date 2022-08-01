@@ -30,6 +30,9 @@
       "path": "exercise/09-env-vars"
     },
     {
+      "path": "exercise/10-admin-user"
+    },
+    {
       "path": "final/01-routing"
     },
     {
@@ -76,6 +79,9 @@
     },
     {
       "path": "final/09-env-vars"
+    },
+    {
+      "path": "final/10-admin-user"
     },
     {
       "path": "final/12-final"
