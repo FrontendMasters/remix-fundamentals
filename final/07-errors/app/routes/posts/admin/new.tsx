@@ -1,8 +1,8 @@
 import type { ActionArgs } from "@remix-run/node";
-import { json } from "@remix-run/node";
-import { redirect } from "@remix-run/node";
+import { json, redirect } from "@remix-run/node";
 import { Form, useActionData, useTransition } from "@remix-run/react";
 import invariant from "tiny-invariant";
+import { ErrorFallback } from "~/components";
 
 import { createPost } from "~/models/post.server";
 
@@ -86,4 +86,10 @@ export default function NewPost() {
       </p>
     </Form>
   );
+}
+
+export function ErrorBoundary({ error }: { error: Error }) {
+  console.error(error);
+
+  return <ErrorFallback>There was a problem. Sorry.</ErrorFallback>;
 }

@@ -1,8 +1,14 @@
 import type { ActionArgs } from "@remix-run/node";
-import { json } from "@remix-run/node";
-import { redirect } from "@remix-run/node";
-import { Form, useActionData, useTransition } from "@remix-run/react";
+import { json, redirect } from "@remix-run/node";
+import {
+  Form,
+  useActionData,
+  useCatch,
+  useParams,
+  useTransition,
+} from "@remix-run/react";
 import invariant from "tiny-invariant";
+import { ErrorFallback } from "~/components";
 
 import { createPost } from "~/models/post.server";
 
@@ -86,4 +92,25 @@ export default function NewPost() {
       </p>
     </Form>
   );
+}
+
+export function CatchBoundary() {
+  const caught = useCatch();
+  const params = useParams();
+
+  if (caught.status === 404) {
+    return (
+      <ErrorFallback>
+        There was no blog post found with the slug "{params.slug}"
+      </ErrorFallback>
+    );
+  }
+
+  throw new Error(`Unexpected caught response with status: ${caught.status}`);
+}
+
+export function ErrorBoundary({ error }: { error: Error }) {
+  console.error(error);
+
+  return <ErrorFallback>There was a problem. Sorry.</ErrorFallback>;
 }

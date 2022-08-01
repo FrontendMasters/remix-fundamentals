@@ -33,6 +33,9 @@
       "path": "exercise/10-admin-user"
     },
     {
+      "path": "exercise/11-edit"
+    },
+    {
       "path": "final/01-routing"
     },
     {
@@ -84,7 +87,13 @@
       "path": "final/10-admin-user"
     },
     {
-      "path": "final/12-final"
+      "path": "final/10-admin-user.extra-01-ui"
+    },
+    {
+      "path": "final/11-edit"
+    },
+    {
+      "path": "final/11-edit.extra-03-finished"
     }
   ]
 }
