@@ -28,7 +28,32 @@ product teams need, and those teams don't need to worry about what the
 header/footer team needs either. This eliminates one of the major challenges
 that lead organizations to desire a complicated micro-frontend architecture.
 
-TODO: explain Outlet
+Even though the parent and child don't need to communicate, the parent is
+required to specify where the child should be rendered. This is where the
+`<Outlet />` component comes in. Here's how you use it:
+
+```tsx filename=app/routes/photos.tsx
+import { Outlet } from "@remix-run/react";
+
+export default function PhotosRoute() {
+  return (
+    <div>
+      <h1>Your Photos</h1>
+      <Outlet /> {/* 👈 This is where any children will be rendered */}
+    </div>
+  );
+}
+```
+
+```tsx filename=app/routes/photos/$category.tsx
+export default function CategoryRoute() {
+  return (
+    <div>
+      {/* Remix will make sure that I'm rendered within the <Outlet /> above */}
+    </div>
+  );
+}
+```
 
 Another neat feature of nested routing comes in the form of relative route
 calculation for the `<Link />` `to` prop. So if I render a `<Link />` component
@@ -102,7 +127,7 @@ some JSX you can use in some of these new files you'll create:
       </ul>
     </nav>
     <main className="col-span-4 md:col-span-3">
-      {/* 🐨 add an Outlet component here */}
+      {/* 🐨 your job is to add an Outlet component here */}
     </main>
   </div>
 </div>
