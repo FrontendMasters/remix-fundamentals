@@ -106,9 +106,10 @@ export default function PostAdmin() {
           <input
             type="text"
             name="slug"
-            className={inputClassName}
+            className={`${inputClassName} disabled:opacity-60`}
             key={data?.post?.slug ?? "new"}
             defaultValue={data?.post?.slug}
+            disabled={Boolean(data.post)}
           />
         </label>
       </p>

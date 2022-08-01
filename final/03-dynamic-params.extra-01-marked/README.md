@@ -4,12 +4,10 @@
 
 ## 🤓 Background
 
-TODO: see what tweet this is and change it to a rick roll or something:
-
 Checkout this link to a tweet:
 
 ```
-https://twitter.com/kentcdodds/status/1550606109760622592
+https://twitter.com/kentcdodds/status/1509892236032413702
 ```
 
 That last long number is a unique identifier for the tweet. It tells twitter

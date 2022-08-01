@@ -4,7 +4,7 @@
 
 ## 🤓 Background
 
-TODO: stuff
+TODO: write this
 
 ```
 git diff --no-index exercise/07-edit/app/routes/posts/admin/new.tsx final/07-edit/app/routes/posts/admin/\$slug.tsx
