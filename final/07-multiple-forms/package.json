@@ -1,5 +1,5 @@
 {
-  "name": "final-07-multiple-forms.extra-01-finish",
+  "name": "final-07-multiple-forms",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",

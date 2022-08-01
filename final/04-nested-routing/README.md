@@ -124,6 +124,11 @@ some JSX you can use in some of these new files you'll create:
             </Link>
           </li>
         ))}
+        <li>
+          <Link to="new" className="text-blue-600 underline">
+            ➕ Create New Post
+          </Link>
+        </li>
       </ul>
     </nav>
     <main className="col-span-4 md:col-span-3">

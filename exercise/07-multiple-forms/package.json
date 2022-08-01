@@ -1,5 +1,5 @@
 {
-  "name": "final-07-multiple-forms",
+  "name": "exercise-07-multiple-forms",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",
