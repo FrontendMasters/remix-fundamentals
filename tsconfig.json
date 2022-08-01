@@ -63,7 +63,10 @@
       "path": "final/05-mutations"
     },
     {
-      "path": "final/05-mutations.extra-01-ts"
+      "path": "final/05-mutations.extra-01-errors"
+    },
+    {
+      "path": "final/05-mutations.extra-02-ts"
     },
     {
       "path": "final/06-progressive-enhancement"

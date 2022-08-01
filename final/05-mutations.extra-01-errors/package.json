@@ -1,5 +1,5 @@
 {
-  "name": "final-05-mutations.extra-01-ts",
+  "name": "final-05-mutations.extra-01-errors",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",
