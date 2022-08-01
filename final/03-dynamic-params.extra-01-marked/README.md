@@ -145,6 +145,11 @@ then we could be in trouble.
 However, in our case, we're the author of our own blog posts so we're safe to
 use this escape hatch, so no worries!
 
+**Files**:
+
+- `app/models/post.server.ts`
+- `app/routes/posts/$slug.tsx`
+
 ### 2. Help TypeScript help us
 
 We've got a few spots where TypeScript is upset at us. One of them is the use of
@@ -167,6 +172,11 @@ already installed) and make TypeScript happy about things.
 
 We'll also want to do the same for if no post is found by the given slug in the
 database. We'll deal with a proper `404` status code and error page later.
+
+**Files**:
+
+- `app/models/post.server.ts`
+- `app/routes/posts/$slug.tsx`
 
 ## 🦉 Elaboration and Feedback
 

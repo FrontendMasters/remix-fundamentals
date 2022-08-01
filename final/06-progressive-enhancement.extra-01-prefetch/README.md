@@ -6,8 +6,8 @@
 
 TODO:
 
-- Start: https://remix.run/docs/en/v1/tutorials/blog#progressive-enhancement
-- Stop: https://remix.run/docs/en/v1/tutorials/blog#homework
+- Start: http://localhost:3000/docs/en/v1/tutorials/blog#progressive-enhancement
+- Stop: http://localhost:3000/docs/en/v1/tutorials/blog#homework
 
 ## 💪 Exercise
 
