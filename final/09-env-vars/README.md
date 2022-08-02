@@ -178,6 +178,10 @@ declare global {
 Give that a shot and see if you can get autocomplete for global environment
 variables.
 
+**Files**:
+
+- `app/env.server.tsx`
+
 ## 🦉 Elaboration and Feedback
 
 After the instruction, if you want to remember what you've just learned, then

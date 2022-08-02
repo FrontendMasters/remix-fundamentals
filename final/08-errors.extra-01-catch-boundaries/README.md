@@ -100,6 +100,10 @@ So, if we want to add an error boundary to handle all unhandled errors under
 
 ## 🗃 Files
 
+- `app/routes/posts.tsx` <-- you'll create this file
+- `app/routes/posts/$slug.tsx`
+- `app/routes/posts/admin/$slug.tsx`
+
 ## 💯 Extra Credit
 
 ### 1. Catch Boundaries
@@ -123,6 +127,11 @@ throw new Response("not found", { status: 404 });
 
 The `CatchBoundary` should be looking for caught responses that are status `404`
 and display a helpful error message in that case.
+
+**Files**:
+
+- `app/routes/posts/$slug.tsx`
+- `app/routes/posts/admin/$slug.tsx`
 
 ## 🦉 Elaboration and Feedback
 

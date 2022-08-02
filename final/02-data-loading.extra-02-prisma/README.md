@@ -141,6 +141,10 @@ For this extra credit add `typeof loader` to the `useLoaderData` call (so far we
 don't need arguments to our `loader`, but keep `LoaderArgs` in mind for the
 future).
 
+**Files**:
+
+- `app/routs/posts/index.tsx`
+
 ### 2. Switch to prisma for data
 
 This workshop isn't really about prisma. Remix works with whatever data loading
@@ -154,6 +158,11 @@ As an extra tip, it's pretty common practice to put interaction with database
 models in a special module responsible for that specifically, so you can create
 a file at `app/models/posts.server.ts` and put a `getPosts` function in that.
 We'll be adding more functions to that module soon.
+
+**Files**:
+
+- `app/models/post.server.ts`
+- `app/routs/posts/index.tsx`
 
 ### 3. Optimize data loading
 
@@ -174,6 +183,11 @@ prisma.dogo.findMany({ select: { id: true, name: true } });
 
 See if you can reduce the amount of data over the wire when you navigate to the
 post listing page.
+
+**Files**:
+
+- `app/models/post.server.ts`
+- `app/routs/posts/index.tsx`
 
 ## 🦉 Elaboration and Feedback
 
