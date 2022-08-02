@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Form, Link } from "@remix-run/react";
 
 import { useOptionalUser } from "~/utils";
 
@@ -29,7 +29,16 @@ export default function Index() {
               </p>
               <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
                 {user ? (
-                  `Hello ${user.email}`
+                  <div>
+                    <p className="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-3xl">
+                      Hello {user.email} 👋
+                    </p>
+                    <Form action="/logout" method="post">
+                      <button className="w-full rounded bg-yellow-500  py-2 px-4 text-white hover:bg-yellow-600 focus:bg-yellow-400">
+                        Logout
+                      </button>
+                    </Form>
+                  </div>
                 ) : (
                   <Link
                     to="/login"
