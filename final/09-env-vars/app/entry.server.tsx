@@ -3,6 +3,7 @@ import { RemixServer } from "@remix-run/react";
 import { renderToString } from "react-dom/server";
 import { getEnv } from "./env.server";
 
+// @ts-expect-error we'll fix this in the extra credit
 global.ENV = getEnv();
 
 export default function handleRequest(

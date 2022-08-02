@@ -1,19 +1,45 @@
-import type { ActionArgs } from "@remix-run/node";
+import type { ActionArgs, LoaderArgs } from "@remix-run/node";
 import { json, redirect } from "@remix-run/node";
 import {
   Form,
   useActionData,
   useCatch,
+  useLoaderData,
   useParams,
   useTransition,
 } from "@remix-run/react";
 import invariant from "tiny-invariant";
 import { ErrorFallback } from "~/components";
 
-import { createPost } from "~/models/post.server";
+import {
+  createPost,
+  deletePost,
+  getPost,
+  updatePost,
+} from "~/models/post.server";
 
-export async function action({ request }: ActionArgs) {
+export async function loader({ params }: LoaderArgs) {
+  invariant(params.slug, "slug not found");
+  if (params.slug === "new") {
+    return json({ post: null });
+  }
+
+  const post = await getPost(params.slug);
+  if (!post) {
+    throw new Response("Not Found", { status: 404 });
+  }
+  return json({ post });
+}
+
+export async function action({ request, params }: ActionArgs) {
   const formData = await request.formData();
+  const intent = formData.get("intent");
+  invariant(typeof params.slug === "string", "slug not provided");
+
+  if (intent === "delete") {
+    await deletePost(params.slug);
+    return redirect("/posts/admin");
+  }
 
   const title = formData.get("title");
   const slug = formData.get("slug");
@@ -33,18 +59,26 @@ export async function action({ request }: ActionArgs) {
   invariant(typeof slug === "string", "slug must be a string");
   invariant(typeof markdown === "string", "markdown must be a string");
 
-  await createPost({ title, slug, markdown });
+  if (params.slug === "new") {
+    await createPost({ title, slug, markdown });
+  } else {
+    await updatePost({ title, slug, markdown });
+  }
 
   return redirect("/posts/admin");
 }
 
 const inputClassName = `w-full rounded border border-gray-500 px-2 py-1 text-lg`;
 
-export default function NewPost() {
+export default function PostAdmin() {
+  const data = useLoaderData<typeof loader>();
   const errors = useActionData<typeof action>();
 
   const transition = useTransition();
-  const isCreating = Boolean(transition.submission);
+  const isCreating = transition.submission?.formData.get("intent") === "create";
+  const isUpdating = transition.submission?.formData.get("intent") === "update";
+  const isDeleting = transition.submission?.formData.get("intent") === "delete";
+  const isNewPost = !data.post;
 
   return (
     <Form method="post">
@@ -54,7 +88,13 @@ export default function NewPost() {
           {errors?.title ? (
             <em className="text-red-600">{errors.title}</em>
           ) : null}
-          <input type="text" name="title" className={inputClassName} />
+          <input
+            type="text"
+            name="title"
+            className={inputClassName}
+            key={data?.post?.slug ?? "new"}
+            defaultValue={data?.post?.title}
+          />
         </label>
       </p>
       <p>
@@ -63,7 +103,14 @@ export default function NewPost() {
           {errors?.slug ? (
             <em className="text-red-600">{errors.slug}</em>
           ) : null}
-          <input type="text" name="slug" className={inputClassName} />
+          <input
+            type="text"
+            name="slug"
+            className={`${inputClassName} disabled:opacity-60`}
+            key={data?.post?.slug ?? "new"}
+            defaultValue={data?.post?.slug}
+            disabled={Boolean(data.post)}
+          />
         </label>
       </p>
       <p>
@@ -79,17 +126,33 @@ export default function NewPost() {
           rows={8}
           name="markdown"
           className={`${inputClassName} font-mono`}
+          key={data?.post?.slug ?? "new"}
+          defaultValue={data?.post?.markdown}
         />
       </p>
-      <p className="text-right">
+      <div className="flex justify-end gap-4">
+        {isNewPost ? null : (
+          <button
+            type="submit"
+            name="intent"
+            value="delete"
+            className="rounded bg-red-500 py-2 px-4 text-white hover:bg-red-600 focus:bg-red-400 disabled:bg-red-300"
+            disabled={isDeleting}
+          >
+            {isDeleting ? "Deleting..." : "Delete"}
+          </button>
+        )}
         <button
           type="submit"
+          name="intent"
+          value={isNewPost ? "create" : "update"}
           className="rounded bg-blue-500 py-2 px-4 text-white hover:bg-blue-600 focus:bg-blue-400 disabled:bg-blue-300"
-          disabled={isCreating}
+          disabled={isCreating || isUpdating}
         >
-          {isCreating ? "Creating..." : "Create Post"}
+          {isNewPost ? (isCreating ? "Creating..." : "Create") : null}
+          {isNewPost ? null : isUpdating ? "Updating..." : "Update"}
         </button>
-      </p>
+      </div>
     </Form>
   );
 }
