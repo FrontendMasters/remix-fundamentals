@@ -18,7 +18,7 @@ routing. There are three options for routing in a Remix app:
 When you place a file in `app/routes` Remix creates a route for that file. You
 can
 [read about the filename convention here](https://remix.run/docs/en/v1/api/conventions#file-name-conventions).
-The most important think for you to know right now is that the file should have
+The most important thing for you to know right now is that the file should have
 a component as the `default` `export` which will be rendered for the part of the
 UI the file represents:
 
