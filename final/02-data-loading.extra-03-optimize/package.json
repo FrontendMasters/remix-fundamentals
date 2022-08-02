@@ -1,5 +1,5 @@
 {
-  "name": "final-02-data-loading.extra-02-prisma",
+  "name": "final-02-data-loading.extra-03-optimize",
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",

@@ -45,6 +45,9 @@
       "path": "final/02-data-loading.extra-02-prisma"
     },
     {
+      "path": "final/02-data-loading.extra-03-optimize"
+    },
+    {
       "path": "final/03-dynamic-params"
     },
     {

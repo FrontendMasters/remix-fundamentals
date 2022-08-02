@@ -152,8 +152,28 @@ time, go ahead and swap our hard-coded data with some calls into `prisma`.
 
 As an extra tip, it's pretty common practice to put interaction with database
 models in a special module responsible for that specifically, so you can create
-a file at `app/models/posts.server.ts` and put a `getPostListItems` function in
-that. We'll be adding more functions to that module soon.
+a file at `app/models/posts.server.ts` and put a `getPosts` function in that.
+We'll be adding more functions to that module soon.
+
+### 3. Optimize data loading
+
+One cool thing about running on the server is we can trim down the data that our
+`loader` sends to only the stuff we want. Whether it's coming from a third party
+API we're hitting with `fetch` or a database call, we can fine-tune the data we
+return from the `loader` to only the stuff we need in our component.
+
+Let's use prisma's querying API to limit what we get from the database to just
+the data our UI needs. In fact, we can rename `getPosts` to `getPostListItems`
+to more accurately reflect what it's doing.
+
+Here's an example of what we can do with prisma's querying API:
+
+```tsx
+prisma.dogo.findMany({ select: { id: true, name: true } });
+```
+
+See if you can reduce the amount of data over the wire when you navigate to the
+post listing page.
 
 ## 🦉 Elaboration and Feedback
 
