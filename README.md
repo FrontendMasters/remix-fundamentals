@@ -50,7 +50,7 @@ Follow these steps to get this set up:
 
 ```sh
 git clone https://github.com/FrontendMasters/remix-fundamentals.git
-cd remix-workshop
+cd remix-fundamentals
 npm run setup
 ```
 
