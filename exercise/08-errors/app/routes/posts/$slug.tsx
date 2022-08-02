@@ -25,3 +25,6 @@ export default function PostSlug() {
     </main>
   );
 }
+
+// 🐨 Add an ErrorBoundary component to this
+// 💰 You can use the ErrorFallback component from "~/components"

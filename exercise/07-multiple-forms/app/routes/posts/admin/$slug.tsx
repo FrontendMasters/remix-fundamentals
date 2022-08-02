@@ -18,9 +18,7 @@ export async function loader({ params }: LoaderArgs) {
   }
 
   const post = await getPost(params.slug);
-  if (!post) {
-    throw new Response("Not Found", { status: 404 });
-  }
+  invariant(post, `Post not found: ${params.slug}`);
   return json({ post });
 }
 
