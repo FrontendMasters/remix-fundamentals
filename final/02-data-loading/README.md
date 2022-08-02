@@ -152,8 +152,8 @@ time, go ahead and swap our hard-coded data with some calls into `prisma`.
 
 As an extra tip, it's pretty common practice to put interaction with database
 models in a special module responsible for that specifically, so you can create
-a file at `app/models/posts.server.ts` and put a `getPosts` function in that.
-We'll be adding more functions to that module soon.
+a file at `app/models/posts.server.ts` and put a `getPostListItems` function in
+that. We'll be adding more functions to that module soon.
 
 ## 🦉 Elaboration and Feedback
 

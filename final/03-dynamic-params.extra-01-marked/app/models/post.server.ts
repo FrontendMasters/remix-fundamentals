@@ -1,7 +1,7 @@
 import { prisma } from "~/db.server";
 
-export async function getPosts() {
-  return prisma.post.findMany();
+export async function getPostListItems() {
+  return prisma.post.findMany({ select: { slug: true, title: true } });
 }
 
 // @ts-expect-error we'll fix this in extra credit
