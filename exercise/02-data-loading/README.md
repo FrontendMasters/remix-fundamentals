@@ -102,7 +102,7 @@ Put that in your loader and then get that from the loader to the component using
 
 ## 🗃 Files
 
-- `app/routs/posts/index.tsx`
+- `app/routes/posts/index.tsx`
 
 ## 💯 Extra Credit
 
@@ -143,7 +143,7 @@ future).
 
 **Files**:
 
-- `app/routs/posts/index.tsx`
+- `app/routes/posts/index.tsx`
 
 ### 2. Switch to prisma for data
 
@@ -162,7 +162,7 @@ We'll be adding more functions to that module soon.
 **Files**:
 
 - `app/models/post.server.ts`
-- `app/routs/posts/index.tsx`
+- `app/routes/posts/index.tsx`
 
 ### 3. Optimize data loading
 
@@ -187,7 +187,7 @@ post listing page.
 **Files**:
 
 - `app/models/post.server.ts`
-- `app/routs/posts/index.tsx`
+- `app/routes/posts/index.tsx`
 
 ## 🦉 Elaboration and Feedback
 
