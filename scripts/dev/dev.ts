@@ -1,3 +1,4 @@
+import * as path from "path";
 import cp from "child_process";
 import { findApp, promptForApp } from "../utils";
 import type { App } from "../utils/utils";
@@ -13,7 +14,7 @@ async function go() {
     await saveDb({ lastDevvedApp: app.relativePath });
   } else {
     if (/^\d+$/.test(search)) {
-      search = `exercise/${search.padStart(2, "0")}`;
+      search = path.join(`exercise`,`${search.padStart(2, "0")}`);
     }
 
     app = await findApp(search);

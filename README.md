@@ -1,5 +1,5 @@
 <div>
-  <h1 align="center"><a href="https://kentcdodds.com/workshops/build-better-apps-with-remix">💿 Remix Fundamentals</a></h1>
+  <h1 align="center"><a href="https://frontendmasters.com/courses/remix/">💿 Remix Fundamentals</a></h1>
   <strong>
     Build Better websites with Remix
   </strong>
@@ -28,7 +28,7 @@
 ## System Requirements
 
 - [git][git] v2.13 or greater
-- [NodeJS][node] `14 || 16 || 18`
+- [NodeJS][node] `16 || 18`
 - [npm][npm] v8 or greater
 
 All of these must be available in your `PATH`. To verify things are set up

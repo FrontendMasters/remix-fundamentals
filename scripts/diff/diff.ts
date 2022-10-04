@@ -1,3 +1,4 @@
+import * as path from "path";
 import cp from "child_process";
 import { findApp, promptForApp, guessNextApp, readDb, saveDb } from "../utils";
 import type { App } from "../utils/utils";
@@ -16,11 +17,11 @@ async function go() {
     await saveDb({ lastDiffedApp: secondApp.relativePath });
   } else {
     if (/^\d+$/.test(first)) {
-      first = `./exercise/${first.padStart(2, "0")}`;
+      first = path.join(__dirname, `exercise`,`${first.padStart(2, "0")}`);
     }
 
     if (/^\d+$/.test(second)) {
-      second = `./final/${second.padStart(2, "0")}`;
+      second = path.join(__dirname, `final`,`${second.padStart(2, "0")}`);
     }
 
     if (!second) {
