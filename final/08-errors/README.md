@@ -95,7 +95,7 @@ export default function HiddenParentRoute() {
 ```
 
 So, if we want to add an error boundary to handle all unhandled errors under
-`/posts`, we'll need to create a `/app/routes/posts/tsx` file with that in it
+`/posts`, we'll need to create a `/app/routes/posts.tsx` file with that in it
 (to get the same functionality) and then we can add the `ErrorBoundary`.
 
 ## 🗃 Files
