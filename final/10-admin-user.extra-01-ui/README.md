@@ -76,7 +76,7 @@ How cool is that!? I think it's pretty cool. Let's apply this to our own app.
 ## 💪 Exercise
 
 We want to protect every route under `/posts/admin`. First we want to make an
-abstraction for this in `app/server.session.ts`. Then we'll use that abstraction
+abstraction for this in `app/session.server.ts`. Then we'll use that abstraction
 in the other routes. Remember to apply it to both the `loader` and `action`
 functions.
 
