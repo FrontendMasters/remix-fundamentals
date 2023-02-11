@@ -45,7 +45,7 @@ behavior and interacting directly with the browser's `history` API. To do this,
 we'll be using the `<Link />` component and the `to` prop:
 
 ```tsx
-<a href="/puppies">Full-page reload happines</a>
+<a href="/puppies">Full-page reload happiness</a>
 <Link to="/puppies">Client-side navigation happiness</Link>
 ```
 
