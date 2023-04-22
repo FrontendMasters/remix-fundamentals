@@ -8,16 +8,16 @@ Almost everything with a URL has routing requirements. Whether it's a web app,
 or a series of API endpoints, routing is an important part. Remix has built-in
 routing. There are three options for routing in a Remix app:
 
-1. [File-system](https://remix.run/docs/en/v1/api/conventions#file-name-conventions)
+1. [File-system](https://remix.run/docs/en/1.15.0/file-conventions/routes-files)
    based routes (most common)
-2. [`remix.config.js`](https://remix.run/docs/en/v1/api/conventions#routes)
+2. [`remix.config.js`](https://remix.run/docs/en/1.15.0/file-conventions/remix-config#routes)
    based routes (less common)
 3. Runtime defined routes (primarily used for
-   [migrations](https://remix.run/docs/en/v1/guides/migrating-react-router-app))
+   [migrations](https://remix.run/docs/en/1.15.0/guides/migrating-react-router-app))
 
 When you place a file in `app/routes` Remix creates a route for that file. You
 can
-[read about the filename convention here](https://remix.run/docs/en/v1/api/conventions#file-name-conventions).
+[read about the filename convention here](https://remix.run/docs/en/1.15.0/file-conventions/routes-files).
 The most important thing for you to know right now is that the file should have
 a component as the `default` `export` which will be rendered for the part of the
 UI the file represents:
@@ -52,10 +52,10 @@ we'll be using the `<Link />` component and the `to` prop:
 Those two elements will lead to the same place, but the `<Link />` will be a
 better user experience.
 
-📜 [Remix Routing Docs](https://remix.run/docs/en/v1/guides/routing).
+📜 [Remix Routing Docs](https://remix.run/docs/en/1.15.0/guides/routing).
 
 📜
-[Blog Tutorial: Your First Route](https://remix.run/docs/en/v1/tutorials/blog#your-first-route)
+[Blog Tutorial: Your First Route](https://remix.run/docs/en/1.15.0/tutorials/blog#your-first-route)
 
 ## 💪 Exercise
 
