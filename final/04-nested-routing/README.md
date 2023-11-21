@@ -17,7 +17,7 @@ https://yourname.com/photos/mountains/timpanogos
 And just like a filesystem where files are contained within folders which are
 contained within folders, UIs often resemble this same relationship. For a
 deeper look at this idea, checkout 📜
-[What is nested Routing](https://remix.run/docs/en/v1/guides/routing#what-is-nested-routing)
+[What is nested Routing](https://remix.run/docs/en/1.15.0/guides/routing#what-is-nested-routing)
 in the Remix documentation.
 
 What makes nested layout routes so great is that it allows you to de-couple the

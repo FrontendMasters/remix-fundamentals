@@ -23,7 +23,7 @@
 - Some
   [experience with JavaScript](https://kentcdodds.com/blog/javascript-to-know-for-react)
 - Some [experience with React](https://kcd.im/beginner-react)
-- Some [experience with Node.js](https://nodejs.dev/learn)
+- Some [experience with Node.js](https://nodejs.dev/en/learn/)
 
 ## System Requirements
 
