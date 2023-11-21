@@ -27,11 +27,10 @@ async function go() {
   console.log(`🏎  Starting dev for ./${app.relativePath}`);
 
   cp.spawnSync(`npm run dev -s`, {
-    // @ts-expect-error no idea what's up with this, but it works as expected
     cwd: app.fullPath,
     shell: true,
     stdio: "inherit",
-    env: { PORT: app.portNumber, ...process.env },
+    env: { PORT: String(app.portNumber), ...process.env },
   });
 }
 
