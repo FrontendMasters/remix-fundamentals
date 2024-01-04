@@ -66,7 +66,7 @@ async function requireUserPermission(request: Request, permission: string) {
 }
 
 export async function loader({ request }: LoaderArgs) {
-  await requireUserPermission("emails.write");
+  await requireUserPermission(request, "emails.write");
   return json({});
 }
 ```
